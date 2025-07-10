@@ -20,4 +20,4 @@ while True:
         print('Password is strong')
         break
     else:
-        print('Weak Password')
+        print('Weak Password!!')
