@@ -1,23 +1,23 @@
-import string
-
-def strong_password(password):
-    if len(password)<8:
-        return False
-    elif not any(ch.isupper() for ch in password):
-        return False
-    elif not any(ch.islower() for ch in password):
-        return False
-    elif not any(ch.isdigit() for ch in password):
-        return False
-    elif not any(ch in string.punctuation for ch in password):
-        return False
-    else:
-        return True
-    
 while True:
-    password=input('Enter Password\n')
-    if strong_password(password):
-        print('Password is strong')
+
+    print("\nMenu:")
+    print("1. Option A")
+    print("2. Option B")
+    print("3. Option C")
+    print("4. Exit")
+    
+    choice = input("Enter your choice: ")
+
+  
+    if choice == '1':
+        print("You selected Option A")
+    elif choice == '2':
+        print("You selected Option B")
+    elif choice == '3':
+        print("You selected Option C")
+    elif choice == '4':
+        print("Exiting the menu. Goodbye!")
         break
     else:
-        print('Weak Password!!')
+    
+        print("Invalid choice, please try again.")
