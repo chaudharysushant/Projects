@@ -1,23 +1,19 @@
-while True:
+word = input("Enter the word: ")
+cache = "_" * len(word)
+attempts = 6
+guessed_letters = []
 
-    print("\nMenu:")
-    print("1. Option A")
-    print("2. Option B")
-    print("3. Option C")
-    print("4. Exit")
-    
-    choice = input("Enter your choice: ")
-
-  
-    if choice == '1':
-        print("You selected Option A")
-    elif choice == '2':
-        print("You selected Option B")
-    elif choice == '3':
-        print("You selected Option C")
-    elif choice == '4':
-        print("Exiting the menu. Goodbye!")
-        break
-    else:
-    
-        print("Invalid choice, please try again.")
+while attempts > 0 and cache != word:
+    print("Current word:", cache)
+    guess = input("Guess a letter: ")
+    guessed_letters.append(guess)
+    new_cache = ""
+    for index, letter in enumerate(word):
+        print(f"{index}: {letter}")
+        if letter in guessed_letters:
+            new_cache += letter
+        else:
+            new_cache += "_"
+    cache = new_cache
+    if guess not in word:
+        attempts -= 1
