@@ -1,33 +1,68 @@
-word = input("Enter the word: ").lower()
-cache = "_" * len(word)
-attempts = 6
-guessed_letters = []
+tasks = []
 
-print("\n" * 50) 
+while True:
+    print("\nMENU OPTIONS:\n"
+          "1. Add Task\n"
+          "2. View Tasks\n"
+          "3. Update Task\n"
+          "4. Delete Task\n"
+          "5. Exit")
+    
+    choice = input("Enter your choice: ")
 
-while attempts > 0 and cache != word:
-    print("Current word:", cache)
-    guess = input("Guess a letter: ").lower()
+    if choice == "1":
+        task = input("Add Your Task: ")
+        tasks.append(task)
+        print("Task Added!\n")
 
-    if guess in guessed_letters:
-        print("You already guessed that letter. Try again.")
-        continue
-
-    guessed_letters.append(guess)
-    new_cache = ""
-    for index, letter in enumerate(word):
-       
-        if letter in guessed_letters:
-            new_cache += letter
+    elif choice == "2":
+        if not tasks:
+            print("No tasks to show.")
         else:
-            new_cache += "_"
-    cache = new_cache
+            print("Tasks:")
+            for index, task in enumerate(tasks, start=1):
+                print(f"{index}. {task}")
 
-    if guess not in word:
-        attempts -= 1
-        print("Wrong Guess. Attempts left:", attempts)
+    elif choice == "3":
+        if not tasks:
+            print("No tasks to update.")
+        else:
+            print("Tasks:")
+            for index, task in enumerate(tasks, start=1):
+                print(f"{index}. {task}")
 
-if cache == word:
-    print("You guessed the word:", word)
-else:
-    print("Game over! The word was:", word)
+            try:
+                task_num = int(input("Enter the task number to update: "))
+                if 1 <= task_num <= len(tasks):
+                    new_task = input("Enter the new task description: ")
+                    tasks[task_num - 1] = new_task
+                    print("Task updated!")
+                else:
+                    print("Invalid task number.")
+            except ValueError:
+                print("Please enter a valid number.")
+
+    elif choice == "4":
+        if not tasks:
+            print("No tasks to delete.")
+        else:
+            print("Tasks:")
+            for index, task in enumerate(tasks, start=1):
+                print(f"{index}. {task}")
+
+            try:
+                task_num = int(input("Enter the task number to delete: "))
+                if 1 <= task_num <= len(tasks):
+                    deleted_task = tasks.pop(task_num - 1)
+                    print(f"Task '{deleted_task}' deleted!")
+                else:
+                    print("Invalid task number.")
+            except ValueError:
+                print("Please enter a valid number.")
+
+    elif choice == "5":
+        print("Exiting... Goodbye!")
+        break
+
+    else:
+        print("Invalid choice. Try again.")
