@@ -36,7 +36,7 @@ while True:
                 if 1 <= task_num <= len(tasks):
                     new_task = input("Enter the new task description: ")
                     tasks[task_num - 1] = new_task
-                    print("Task updated!")
+                    print("Task updated!!!")
                 else:
                     print("Invalid task number.")
             except ValueError:
