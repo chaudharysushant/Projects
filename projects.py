@@ -1,5 +1,5 @@
-numbers = [1, 2, 3, 4, 5]
+sentence = "banana apple banana cherry apple banana"
+words = sentence.split()
 
-parity = {number: 'even' if number % 2 == 0 else 'odd' for number in numbers}
-
-print(parity)
+word_freq = {word: words.count(word) for word in set(words)}
+print(word_freq)
