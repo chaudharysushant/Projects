@@ -1,3 +1,5 @@
-numbers = [1,2,3,4,5,6]
-even=list(filter(lambda x:x%2==1, numbers))
-print(even)
+names = ['Asha', 'Bikash', 'Chitra']
+scores = [82, 90, 95]
+
+combine = list(zip(names, scores))
+print(combine)
