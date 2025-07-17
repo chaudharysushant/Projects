@@ -1,2 +1,3 @@
-square = lambda x:x*x
-print(square(5))
+a = ['asha', 'bikash', 'chitra']
+uppercase = list(map(lambda x:x.upper(), a))
+print(uppercase)
