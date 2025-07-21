@@ -1,13 +1,13 @@
-class animal:
-    def __init__(self,name):
+class Animal:
+    def __init__(self, name):
         self.name = name
 
-        def speak(self):
-            print(f"{self.name} makes a sound")
-
-class dog(animal):
     def speak(self):
-        print(f"{self.name}says woof")
+        print(f"{self.name} makes a sound")
 
-Dog = dog("buddy")                    
-dog.speak()
+class Dog(Animal):
+    def speak(self):
+        print(f"{self.name} says woof")
+
+dog1 = Dog("Buddy")
+dog1.speak() 
