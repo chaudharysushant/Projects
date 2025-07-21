@@ -1,12 +1,10 @@
-class car:
-    def __init__(self, brand, color):
-        self.brand = brand
-        self.color = color
-    
-    def drive(self):
-        print(f"{self.brand} is driving.")
+class rectangle:
+    def __init__(self, length, breadth):
+        self.length =length
+        self.breadth =breadth
 
-car1 = car("Toyota", "Red")
-print(car1.brand)
-print(car1.color)
-car1.drive()
+    def area(self):
+        return self.breadth*self.length
+    
+rect = rectangle(5,3)
+print(rect.area())
