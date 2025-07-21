@@ -1,10 +1,13 @@
-class rectangle:
-    def __init__(self, length, breadth):
-        self.length =length
-        self.breadth =breadth
+class animal:
+    def __init__(self,name):
+        self.name = name
 
-    def area(self):
-        return self.breadth*self.length
-    
-rect = rectangle(5,3)
-print(rect.area())
+        def speak(self):
+            print(f"{self.name} makes a sound")
+
+class dog(animal):
+    def speak(self):
+        print(f"{self.name}says woof")
+
+Dog = dog("buddy")                    
+dog.speak()
