@@ -17,8 +17,11 @@ class student:
         return self._grades
     
 s = student("ram")
-s.add_grade(90)
 s.add_grade(80)
+s.add_grade(80)
+s.add_grade(90)
+s.add_grade(85)
+
 
 print(s.name)
 print(s.get_average())
