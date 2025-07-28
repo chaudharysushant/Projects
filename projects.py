@@ -18,3 +18,14 @@ def add_contact():
         writer.writerow([name, email, phone])
     print("Contact added")
 
+def search_contacts():
+    search_name = input("Enter name").lower()
+    with open(FILE_PATH, 'r') as file:
+        reader =csv.DictReader(file)
+        found = False
+        for contact in reader:
+            if search_name in contact['name'].lower():
+                print(f"Found: {contact}")
+                found = True
+        if not found:
+            print("No contacts found with that name.")
